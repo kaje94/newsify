@@ -5,9 +5,9 @@ export default StyleSheet.create({
   ...ApplicationStyles.screen,
   bannerImage: {
     width: '100%',
-    aspectRatio: 1,
+    aspectRatio: 1.25,
   },
   buttonStyle: {
-    marginTop: 10,
+    marginVertical: 15,
   },
 });

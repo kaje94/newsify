@@ -5,6 +5,7 @@ import {
   KeyboardAvoidingView,
   Image,
   View,
+  Linking,
 } from 'react-native';
 import {connect} from 'react-redux';
 import {
@@ -26,29 +27,40 @@ class ViewDetailScreen extends Component {
   _goBack = () => this.props.navigation.goBack();
 
   render() {
+    const {
+      title,
+      author,
+      description,
+      url,
+      imageUrl,
+      publishedAt,
+      content,
+    } = this.props.navigation.state.params;
     return (
       <React.Fragment>
         <Appbar.Header>
           <Appbar.BackAction onPress={this._goBack} />
-          <Appbar.Content title="Title" />
+          <Appbar.Content title={title} />
         </Appbar.Header>
         <ScrollView
           style={[styles.container, {paddingHorizontal: 0, paddingTop: 0}]}>
-          <Image
-            style={styles.bannerImage}
-            source={{
-              uri: 'https://facebook.github.io/react-native/img/tiny_logo.png',
-            }}
-          />
+          {imageUrl && (
+            <Image
+              style={styles.bannerImage}
+              source={{
+                uri: imageUrl,
+              }}
+            />
+          )}
           <View style={styles.container}>
-            <Subheading>descr</Subheading>
-            <Paragraph>content</Paragraph>
-            <Caption>Author: bob</Caption>
-            <Caption>Published at: bob</Caption>
+            <Subheading>{description}</Subheading>
+            <Paragraph>{content}</Paragraph>
+            {author && <Caption>Author: {author}</Caption>}
+            <Caption>Published at: {publishedAt}</Caption>
 
             <Button
               mode="outlined"
-              onPress={() => console.log('Pressed')}
+              onPress={() => Linking.openURL(url)}
               contentStyle={{padding: 10}}
               style={styles.buttonStyle}>
               Read Full Article
