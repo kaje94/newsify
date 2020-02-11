@@ -45,6 +45,7 @@ const ApplicationStyles = {
       ...Fonts.style.h1,
       fontSize: 30,
       color: Colors.eggplant,
+      textTransform: 'capitalize',
     },
     textCenterAlign: {
       textAlign: 'center',

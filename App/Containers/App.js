@@ -2,11 +2,21 @@ import '../Config';
 import DebugConfig from '../Config/DebugConfig';
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
+import {Provider as PaperProvider, DefaultTheme} from 'react-native-paper';
 import RootContainer from './RootContainer';
+import Color from '../Themes/Colors';
 import createStore from '../Redux';
 console.disableYellowBox = true;
 // create our store
 const store = createStore();
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: Color.banner,
+  },
+};
 
 /**
  * Provides an entry point into our application.  Both index.ios.js and index.android.js
@@ -21,7 +31,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <RootContainer />
+        <PaperProvider theme={theme}>
+          <RootContainer />
+        </PaperProvider>
       </Provider>
     );
   }
