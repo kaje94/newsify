@@ -1,30 +1,26 @@
 # Newsify
 
-A mobile application built with React-Native & Ignite-CLI, to simply display news list
+A mobile application built with React-Native & Ignite-CLI(Andross boilerplate).
 
-## :arrow_up: How to Setup
+## Functions
 
-**Step 1:** git clone this repo:
+1. List headline news and custom news(based on user preference), by calling https://newsapi.org APIs.
+2. View full details and redirect to full article.
+3. Simple login feature where the username will be persisted in local storage.
 
-**Step 2:** cd to the cloned repo:
+## Getting Started
 
-**Step 3:** Install the Application with `yarn` or `npm i`
-
-## :arrow_forward: How to Run App
-
-1. cd to the repo
+1. Make sure you're set up for React Native & Node 7.6+
+2. Clone this repo
+3. cd to the cloned repo
+4. Install dependencies with `yarn` or `npm i`
+5. Create a .env file with NEWS_API_SECRET variable
+6. Run the app using one of following commands
 
 - for iOS
   - run `npx react-native run-ios`
 - for Android
   - run `npx react-native run-android`
-
-### Get started:
-
-1. Copy .env.example to .env
-2. Add your config variables
-3. Follow instructions at [https://github.com/luggit/react-native-config#setup](https://github.com/luggit/react-native-config#setup)
-4. Done!
 
 ### Screenshots
 
