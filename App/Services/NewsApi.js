@@ -1,5 +1,6 @@
 // a library to wrap and simplify api calls
 import apisauce from 'apisauce';
+import Secrets from 'react-native-config';
 
 // our "constructor"
 const create = (baseURL = 'https://newsapi.org/v2/') => {
@@ -15,7 +16,7 @@ const create = (baseURL = 'https://newsapi.org/v2/') => {
     // here are some default headers
     headers: {
       'Cache-Control': 'no-cache',
-      'X-Api-Key': 'dc0ef8af8de0459dad38120f90c94e55',
+      'X-Api-Key': Secrets.NEWS_API_SECRET,
     },
     // 10 second timeout...
     timeout: 10000,
