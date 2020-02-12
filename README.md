@@ -1,6 +1,6 @@
 # Newsify
 
-A mobile application built with React-Native & Ignite-CLI(Andross boilerplate).
+##### A mobile application built with React-Native & Ignite-CLI(Andross boilerplate).
 
 ## Functions
 
@@ -21,6 +21,19 @@ A mobile application built with React-Native & Ignite-CLI(Andross boilerplate).
   - run `npx react-native run-ios`
 - for Android
   - run `npx react-native run-android`
+
+## Project Structure
+
+Everything related to react-native is within the App folder
+
+- Containers: The four main screens can be found here(Home,Feed,Profile & ViewDetails) along with their styles.
+- Components: Any custom reusable components can be found here. Eg: CardListItem
+- Config: Initialization configurations can be found here.
+- Images: All images can be found here.
+- Navigation: Route setup and redux navigation config can be found here
+- Redux, Saga: State management and redux persist configs can be found here.
+- Services: Contains API service and other important utilities.
+- Themes: Styling themes used throughout the app styles.
 
 ### Screenshots
 
