@@ -2,13 +2,10 @@ import React from 'react';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-// import LaunchScreen from '../Containers/LaunchScreen';
-// import MainScreen from '../Containers/MainScreen';
 import HomeScreen from '../Containers/HomeScreen';
 import ProfileScreen from '../Containers/ProfileScreen';
 import FeedScreen from '../Containers/FeedScreen';
 
-import styles from './Styles/NavigationStyles';
 import {Colors} from '../Themes';
 
 export const TabNav = createMaterialTopTabNavigator(
@@ -51,7 +48,6 @@ export const TabNav = createMaterialTopTabNavigator(
       inactiveTintColor: Colors.banner,
       style: {
         backgroundColor: Colors.silver,
-        // paddingBottom: 15,
       },
       tabStyle: {
         // backgroundColor: Colors.transparent,
@@ -64,6 +60,5 @@ export const TabNav = createMaterialTopTabNavigator(
       },
     },
     tabBarPosition: 'bottom',
-    // optimizationsEnabled: false,
   },
 );
