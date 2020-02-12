@@ -49,16 +49,17 @@ class HomeScreen extends Component {
                 ItemSeparatorComponent={() => <View style={{height: 15}} />}
                 ListFooterComponent={() => <View style={{height: 25}} />}
                 refreshing={this.props.news.fetchingHeadlines}
-                ListEmptyComponent={ListEmptyComponent}
               />
             )}
           {this.props.news.headlines &&
-            this.props.news.headlines.length === 0 &&
-            this.props.news.fetchingHeadlines && (
-              <View style={styles.activityIndicatorWrap}>
-                <ActivityIndicator size="large" />
-              </View>
-            )}
+          this.props.news.headlines.length === 0 &&
+          this.props.news.fetchingHeadlines ? (
+            <View style={styles.activityIndicatorWrap}>
+              <ActivityIndicator size="large" />
+            </View>
+          ) : (
+            <ListEmptyComponent />
+          )}
         </SafeAreaView>
       </ScrollView>
     );
