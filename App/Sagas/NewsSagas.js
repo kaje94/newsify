@@ -16,7 +16,6 @@ export function* getHeadlines(api, action) {
 
 export function* getNewsFeed(api, action) {
   // make the call to the api
-  console.log('in saga', action);
   const response = yield call(api.getNewsFeed, action.query);
 
   if (response.ok) {

@@ -12,6 +12,7 @@ import {ActivityIndicator} from 'react-native-paper';
 import ReactNativePickerModule from 'react-native-picker-module';
 import CardNewsItem from '../Components/CardNewsItem';
 import NewsRedux from '../Redux/NewsRedux';
+import ListEmptyComponent from '../Components/EmptyList';
 
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
@@ -63,6 +64,7 @@ class FeedScreen extends Component {
             ItemSeparatorComponent={() => <View style={{height: 15}} />}
             ListFooterComponent={() => <View style={{height: 25}} />}
             refreshing={this.props.news.fetchingNewsFeed}
+            ListEmptyComponent={ListEmptyComponent}
           />
 
           <ReactNativePickerModule

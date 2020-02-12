@@ -8,7 +8,8 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {Avatar, TextInput, Button} from 'react-native-paper';
-import Color from '../Themes/Colors';
+import AuthRedux from '../Redux/AuthRedux';
+
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -19,7 +20,12 @@ class ProfileScreen extends Component {
   state = {
     inputText: '',
   };
+  loginUser = () => {
+    this.props.login(this.state.inputText);
+  };
   render() {
+    const {username} = this.props.auth;
+
     return (
       <ScrollView style={styles.container} KeyboardAvoidingView>
         <SafeAreaView behavior="position">
@@ -28,23 +34,27 @@ class ProfileScreen extends Component {
             <View style={styles.avatarWrap}>
               <Avatar.Icon size={100} icon="account" />
             </View>
-            {/* <TextInput
-              mode="outlined"
-              label="User name"
-              value={this.state.inputText}
-              onChangeText={text => this.setState({inputText: text})}
-              style={styles.textInputStyle}
-            /> */}
-            <Text style={[styles.titleText, styles.textCenterAlign]}>
-              Hi, Bob
-            </Text>
+            {username ? (
+              <Text style={[styles.titleText, styles.textCenterAlign]}>
+                Hi, {username}
+              </Text>
+            ) : (
+              <TextInput
+                mode="outlined"
+                label="User name"
+                value={this.state.inputText}
+                onChangeText={text => this.setState({inputText: text})}
+                style={styles.textInputStyle}
+              />
+            )}
+
             <Button
               mode="outlined"
-              icon="plus"
-              onPress={() => console.log('Pressed')}
+              icon={username ? 'logout' : 'plus'}
+              onPress={username ? this.props.logout : this.loginUser}
               contentStyle={{padding: 12}}
               style={styles.buttonStyle}>
-              Log In
+              {username ? 'Log out' : 'Login'}
             </Button>
           </KeyboardAvoidingView>
         </SafeAreaView>
@@ -54,12 +64,15 @@ class ProfileScreen extends Component {
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    auth: state.auth,
+  };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {};
-};
+const mapDispatchToProps = dispatch => ({
+  login: username => dispatch(AuthRedux.loginRequest(username)),
+  logout: () => dispatch(AuthRedux.logoutRequest()),
+});
 
 export default connect(
   mapStateToProps,

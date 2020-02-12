@@ -47,10 +47,10 @@ export const TabNav = createMaterialTopTabNavigator(
       showIcon: true,
       showLabel: true,
       upperCaseLabel: false,
-      activeTintColor: Colors.frost,
+      activeTintColor: Colors.silver,
       inactiveTintColor: Colors.banner,
       style: {
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.silver,
         // paddingBottom: 15,
       },
       tabStyle: {
@@ -59,11 +59,11 @@ export const TabNav = createMaterialTopTabNavigator(
       indicatorStyle: {
         backgroundColor: Colors.banner,
         height: '100%',
-        borderTopLeftRadius: 5,
-        borderTopRightRadius: 5,
+        borderTopLeftRadius: 2,
+        borderTopRightRadius: 2,
       },
     },
     tabBarPosition: 'bottom',
-    optimizationsEnabled: false,
+    // optimizationsEnabled: false,
   },
 );

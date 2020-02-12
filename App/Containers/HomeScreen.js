@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import CardNewsItem from '../Components/CardNewsItem';
+import ListEmptyComponent from '../Components/EmptyList';
 import {ActivityIndicator} from 'react-native-paper';
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 import NewsRedux from '../Redux/NewsRedux';
@@ -22,7 +23,6 @@ class HomeScreen extends Component {
     this.props.getHeadlines();
   }
   render() {
-    console.log('avv', this.props.news);
     return (
       <ScrollView style={styles.container}>
         <SafeAreaView behavior="position">
@@ -49,6 +49,7 @@ class HomeScreen extends Component {
                 ItemSeparatorComponent={() => <View style={{height: 15}} />}
                 ListFooterComponent={() => <View style={{height: 25}} />}
                 refreshing={this.props.news.fetchingHeadlines}
+                ListEmptyComponent={ListEmptyComponent}
               />
             )}
           {this.props.news.headlines &&

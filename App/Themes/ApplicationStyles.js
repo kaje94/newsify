@@ -36,7 +36,8 @@ const ApplicationStyles = {
       textAlign: 'center',
     },
     subtitle: {
-      color: Colors.snow,
+      ...Fonts.style.h5,
+      color: Colors.banner,
       padding: Metrics.smallMargin,
       marginBottom: Metrics.smallMargin,
       marginHorizontal: Metrics.smallMargin,
@@ -55,6 +56,11 @@ const ApplicationStyles = {
     },
     textRightAlign: {
       textAlign: 'right',
+    },
+    emptyComponent: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: Metrics.screenHeight * 0.75,
     },
   },
   darkLabelContainer: {
