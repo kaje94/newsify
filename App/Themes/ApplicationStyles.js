@@ -43,10 +43,11 @@ const ApplicationStyles = {
       marginHorizontal: Metrics.smallMargin,
     },
     titleText: {
-      ...Fonts.style.h1,
-      fontSize: 30,
+      ...Fonts.style.h2,
+      fontSize: 35,
       color: Colors.eggplant,
       textTransform: 'capitalize',
+      marginBottom: 10,
     },
     textCenterAlign: {
       textAlign: 'center',
