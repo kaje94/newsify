@@ -53,6 +53,7 @@ class ProfileScreen extends Component {
               icon={username ? 'logout' : 'plus'}
               onPress={username ? this.props.logout : this.loginUser}
               contentStyle={{padding: 12}}
+              disabled={!(username || this.state.inputText)}
               style={styles.buttonStyle}>
               {username ? 'Log out' : 'Login'}
             </Button>
